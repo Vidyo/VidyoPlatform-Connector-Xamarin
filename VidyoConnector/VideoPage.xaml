@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:VidyoConnector" xmlns:controls="clr-namespace:VidyoConnector.Controls;assembly=VidyoConnector" x:Class="VidyoConnector.VideoPage" Title="Video Conference">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="6" BackgroundColor="#8a000000" />
+        <controls:NativeView x:Name="_videoView" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="6" BackgroundColor="Aqua" />
+        <Button BackgroundColor="#eaeaea" Margin="0, 30, 0, 0" Grid.Row="0" HeightRequest="50" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="EXIT" WidthRequest="150" BorderColor="Silver"
+            BorderWidth="2" BorderRadius="15" HorizontalOptions="Center" Clicked="OnQuit" VerticalOptions="Start" />
+        <Frame x:Name="_loadingForm" IsVisible="false" Padding="0,0,0,0" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="6" Opacity="0.8" BackgroundColor="Silver">
+            <ActivityIndicator x:Name="_connectionSpinner" IsRunning="true" HorizontalOptions="Center" VerticalOptions="Center" />
+        </Frame>
+        <Image x:Name="_toggleConnectButton" Source="{Binding CallImage}" Grid.Row="3" Grid.Column="1">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnConnectButtonClicked" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Source="camera_switch.png" Grid.Row="3" Grid.Column="2">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnCycleCameraButtonClicked" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Source="{Binding CameraPrivacyImage}" Grid.Row="3" Grid.Column="3">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnCameraPrivacyButtonClicked" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Source="{Binding MicrophonePrivacyImage}" Grid.Row="3" Grid.Column="4">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnMicrophonePrivacyButtonClicked" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Label Text="{Binding ToolbarStatus}" TextColor="White" FontSize="15" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center" />
+        <Image Source="gear.png" Grid.Row="4" Grid.Column="4" Margin="10, 10, 10, 10" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="75">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="DiagnosticsButtonClicked" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Label x:Name="ClientVersionLabel" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Grid.ColumnSpan="2" IsVisible="false" Text="{Binding ClientVersion}" TextColor="Red" FontSize="15" />
+    </Grid>
+</ContentPage>

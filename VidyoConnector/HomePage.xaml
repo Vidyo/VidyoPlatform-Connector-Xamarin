@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VidyoConnector.HomePage" Title="Home">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="0, 0, 0, 100">
+            <Image Source="vidyo_io.png" HeightRequest="200" WidthRequest="200" />
+            <Button Text="VIDEO CONFERENCE" WidthRequest="200" BorderColor="Silver" BorderWidth="2" BorderRadius="15" VerticalOptions="Center" HorizontalOptions="Center" Clicked="OnStartConference" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
