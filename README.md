@@ -19,6 +19,17 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 
 > Note: VidyoClient SDK version 19.2.0.8 or later is required. Up to **20.1.0.9** is supported.
 
+### Connect Credentials
+
+For demo purposes please check ViewModel.cs C# file and modify connect credetials:
+
+        string _portal = "*.platform.vidyo.io"; // Insert valid Portal FQDN e.g.: *.platform.vidyo.io
+        string _roomKey = ""; // Insert valid RoomKey e.g.: 8huaP05z6Z
+        string _displayName = "Xamarin User"; // Insert your Display Name
+        string _roomPin = ""; // Insert valid roomPin e.g.: Res$!dfs45
+
+Documentation: https://vidyo.github.io/vidyoplatform.github.io
+
 ## Importing VidyoClient iOS SDK
 > Note: the below steps are already performed in the VidyoConnector.iOS project in the VidyoConnector-xamarin solution. These instructions are intended to show how a developer would import the library into their own application. Therefore, do not perform these steps in this application, which would lead to duplicated libraries and compilation errors. However, one important step is necessary when building on Windows (as opposed to macOS), which is to prevent the iOS native frameworks from being linked. This can be achieved by doing the following: in the solution window under the Xamarin.iOS project, expand "Native references", select "libVidyoClient.a", and press F4 to open specific properties window. Remove all linked "Frameworks" (AudioToolbox, AVFoundation, etc). Save the solution. After you have verified that you placed the SDK in the proper folder, please skip to the "Build and Run Application" section.
 
