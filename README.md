@@ -1,7 +1,7 @@
-# VidyoConnector Xamarin Navigation
+# VidyoPlatform Connector Xamarin
 
 ## Clone Repository
-git clone https://github.com/tmelko-vidyo/vidyo-io-connector-xamarin-navigation.git
+git clone https://github.com/Vidyo/vidyoplatform-connector-xamarin.git
 
 ## Overview
 VidyoConnector-xamarin is a Xamarin Forms cross platform application which contains three projects:
@@ -12,12 +12,12 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 ## Acquire VidyoClient iOS and Android SDKs
 > Note: Highlighted steps are very important because samples already contain configurations specified below and both SDK packages are linked as relative folders located in VidyoConnector-xamarin directory.
 
-1. Download the latest Vidyo.io iOS SDK package: https://static.vidyo.io/latest/package/VidyoClient-iOSSDK.zip
-2. **Move the unzipped VidyoClient-iOSSDK folder to the /vidyo-io-connector-xamarin-navigation/ directory.**
-3. Download the latest Vidyo.io Android SDK package: https://static.vidyo.io/latest/package/VidyoClient-AndroidSDK.zip
-4. **Move the unzipped VidyoClient-AndroidSDK folder to the /vidyo-io-connector-xamarin-navigation/ directory.**
+1. Download the 20.1.0.9 VidyoPlatform iOS SDK package: https://static.vidyo.io/20.1.0.9/package/VidyoClient-iOSSDK.zip
+2. **Move the unzipped VidyoClient-iOSSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
+3. Download the 20.1.0.9 VidyoPlatform Android SDK package: https://static.vidyo.io/20.1.0.9/package/VidyoClient-AndroidSDK.zip
+4. **Move the unzipped VidyoClient-AndroidSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
 
-> Note: VidyoClient SDK version 19.2.0.8 or later is required.
+> Note: VidyoClient SDK version 19.2.0.8 or later is required. Up to **20.1.0.9** is supported.
 
 ## Importing VidyoClient iOS SDK
 > Note: the below steps are already performed in the VidyoConnector.iOS project in the VidyoConnector-xamarin solution. These instructions are intended to show how a developer would import the library into their own application. Therefore, do not perform these steps in this application, which would lead to duplicated libraries and compilation errors. However, one important step is necessary when building on Windows (as opposed to macOS), which is to prevent the iOS native frameworks from being linked. This can be achieved by doing the following: in the solution window under the Xamarin.iOS project, expand "Native references", select "libVidyoClient.a", and press F4 to open specific properties window. Remove all linked "Frameworks" (AudioToolbox, AVFoundation, etc). Save the solution. After you have verified that you placed the SDK in the proper folder, please skip to the "Build and Run Application" section.
