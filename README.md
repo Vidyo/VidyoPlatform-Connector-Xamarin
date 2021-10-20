@@ -12,12 +12,12 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 ## Acquire VidyoClient iOS and Android SDKs
 > Note: Highlighted steps are very important because samples already contain configurations specified below and both SDK packages are linked as relative folders located in VidyoConnector-xamarin directory.
 
-1. Download the 21.2.0.4 VidyoPlatform iOS SDK package: https://static.vidyo.io/21.2.0.4/package/VidyoClient-iOSSDK.zip
+1. Download the 21.5.0.13 VidyoPlatform iOS SDK package: https://static.vidyo.io/21.5.0.13/package/VidyoClient-iOSSDK.zip
 2. **Move the unzipped VidyoClient-iOSSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
-3. Download the 21.2.0.4 VidyoPlatform Android SDK package: https://static.vidyo.io/21.2.0.4/package/VidyoClient-AndroidSDK.zip
+3. Download the 21.5.0.13 VidyoPlatform Android SDK package: https://static.vidyo.io/21.5.0.13/package/VidyoClient-AndroidSDK.zip
 4. **Move the unzipped VidyoClient-AndroidSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
 
-> Note: VidyoClient SDK version 19.2.0.8 or later is required. Up to **21.2.0.4** is supported.
+> Note: VidyoClient SDK version 19.2.0.8 or later is required. Up to **21.5.0.13** is supported.
 
 ### Connect Credentials
 
@@ -43,11 +43,13 @@ To use the VidyoClient SDK in a Xamarin.iOS app, perform the following steps:
 4.  Under "Choose files to include in the project", click the checkbox to the left of "VidyoClient-iOSSDK > include > csharp" and select "OK". 
 5.  In the Solution pad, right-click on the Xamarin.iOS project and select "Add" > "Add Native Reference".
 6.  In the file-selection dialog, browse to project subdirectory "VidyoClient-iOSSDK/lib/ios".
-7.  From that directory, select all 6 static library files "lib*.a" and the framework directory "VPX.framework".
+7.  From that directory, select all 6 static library files "lib*.a", framework "VPX.framework" and at Banuba folder "BNBEffectPlayerC".
 8.  Click "Open" to finish the file selection.
 9.  In the Solution pad, expand the new "Native References" folder in the project; right-click "libVidyoClient"; and choose "Properties".
 10. In that "Properties" pad, go to the "Frameworks" field.
 11. Enter the following list of iOS frameworks from Apple:  AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit
+12. In the Solution pad, expand the new "Native References" folder in the project; right-click "BNBEffectPlayerC"; and choose "Properties".
+13. Select Kind Dropdown -> Framework and under Linker Flags add: -lc++
 
 #### Windows
 
@@ -62,8 +64,8 @@ To use the VidyoClient SDK in a Xamarin.iOS app, perform the following steps:
 9. In the Solution pad, expand the new "Native References" folder in the project; right-click "libVidyoClient"; and choose "Properties".
 10. In that "Properties" pad, go to the "Frameworks" field.
 11. Enter the following list of iOS frameworks from Apple: AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit
-
-> Note: Linking of iOS Frameworks does not take place on Windows platform.
+12. In the Solution pad, expand the new "Native References" folder in the project; right-click "BNBEffectPlayerC"; and choose "Properties".
+13. Select Kind Dropdown -> Framework and under Linker Flags add: -lc++
 
 ## Importing VidyoClient Android SDK
 > Note: the below steps are already performed in the VidyoConnector.Android project in the VidyoConnector-xamarin solution. These instructions are intended to show how a developer would import the library into their own application. Therefore, do not perform these steps in this application, which would lead to duplicated libraries and compilation errors. For this sample, please make sure you have placed the SDK in the right folder and then skip to the "Build and Run Application" section.
