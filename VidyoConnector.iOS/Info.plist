@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>VidyoConnector</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.vidyo.VidyoConnector.Taras</string>
+	<string>com.vidyo.platform.connector.xamarin</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -15,7 +15,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>9.0</string>
+	<string>11.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
