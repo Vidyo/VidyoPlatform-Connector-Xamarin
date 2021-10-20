@@ -31,7 +31,8 @@ For demo purposes please check ViewModel.cs C# file and modify connect credetial
 Documentation: https://vidyo.github.io/vidyoplatform.github.io
 
 ## Importing VidyoClient iOS SDK
-> Note: the below steps are already performed in the VidyoConnector.iOS project in the VidyoConnector-xamarin solution. These instructions are intended to show how a developer would import the library into their own application. Therefore, do not perform these steps in this application, which would lead to duplicated libraries and compilation errors. However, one important step is necessary when building on Windows (as opposed to macOS), which is to prevent the iOS native frameworks from being linked. This can be achieved by doing the following: in the solution window under the Xamarin.iOS project, expand "Native references", select "libVidyoClient.a", and press F4 to open specific properties window. Remove all linked "Frameworks" (AudioToolbox, AVFoundation, etc). Save the solution. After you have verified that you placed the SDK in the proper folder, please skip to the "Build and Run Application" section.
+
+> Important Note: the below steps are already performed in the VidyoConnector.iOS  project in the VidyoConnector solution. These instructions are intended to show how a developer would import the library into their own application. Therefore, do not perform these steps in this application, which would lead to duplicated libraries and compilation errors. For this sample, please make sure you have placed the SDK in the right folder and then skip to the "Build and Run Application" section.
 
 To use the VidyoClient SDK in a Xamarin.iOS app, perform the following steps: 
 
@@ -68,7 +69,7 @@ To use the VidyoClient SDK in a Xamarin.iOS app, perform the following steps:
 13. Select Kind Dropdown -> Framework and under Linker Flags add: -lc++
 
 ## Importing VidyoClient Android SDK
-> Note: the below steps are already performed in the VidyoConnector.Android project in the VidyoConnector-xamarin solution. These instructions are intended to show how a developer would import the library into their own application. Therefore, do not perform these steps in this application, which would lead to duplicated libraries and compilation errors. For this sample, please make sure you have placed the SDK in the right folder and then skip to the "Build and Run Application" section.
+> Note: the below steps are already performed in the VidyoConnector.Android project in the VidyoConnector solution. These instructions are intended to show how a developer would import the library into their own application. Therefore, do not perform these steps in this application, which would lead to duplicated libraries and compilation errors. For this sample, please make sure you have placed the SDK in the right folder and then skip to the "Build and Run Application" section.
 
 To use the VidyoClient SDK in a Xamarin.Android app, perform the following steps:
 
