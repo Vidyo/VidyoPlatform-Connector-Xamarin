@@ -511,7 +511,7 @@
       <SmartLink>False</SmartLink>
       <LinkerFlags>-lc++</LinkerFlags>
     </NativeReference>
-    <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\libsrtp.a">
+    <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\libsrtp2.a">
       <Kind>Static</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
