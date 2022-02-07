@@ -12,12 +12,28 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 ## Acquire VidyoClient iOS and Android SDKs
 > Note: Highlighted steps are very important because samples already contain configurations specified below and both SDK packages are linked as relative folders located in VidyoConnector-xamarin directory.
 
-1. Download the 21.5.0.13 VidyoPlatform iOS SDK package: https://static.vidyo.io/21.5.0.13/package/VidyoClient-iOSSDK.zip
+1. Download the 21.5.0.13 VidyoPlatform iOS SDK package: https://static.vidyo.io/21.6.1.1/package/VidyoClient-iOSSDK.zip
 2. **Move the unzipped VidyoClient-iOSSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
-3. Download the 21.5.0.13 VidyoPlatform Android SDK package: https://static.vidyo.io/21.5.0.13/package/VidyoClient-AndroidSDK.zip
+3. Download the 21.5.0.13 VidyoPlatform Android SDK package: https://static.vidyo.io/21.6.1.1/package/VidyoClient-AndroidSDK.zip
 4. **Move the unzipped VidyoClient-AndroidSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
 
-> Note: VidyoClient SDK version 19.2.0.8 or later is required. Up to **21.5.0.13** is supported.
+> Note: VidyoClient SDK version 19.2.0.8 or later is required. Up to **21.6.1.1** is supported.
+
+## Important Update for Android 21.6.x Version
+> With **21.6.1.1** You have to correct **VidyoClient-AndroidSDK/include/csharp/ConnectorPKG.cs** C# bindings file. 
+> Go to the bottom and replace __ANDROID__ section with:
+
+        #if __ANDROID__
+		internal static IntPtr javaClassHandle;
+		internal static IntPtr javaClassRef;
+		static IntPtr javaMethodRef;
+		public static void SetApplicationUIContext(Android.Content.Context context)
+		{
+			javaClassRef = Android.Runtime.JNIEnv.FindClass("com/vidyo/VidyoClient/Connector/ConnectorPkg", ref javaClassHandle);
+			javaMethodRef = Android.Runtime.JNIEnv.GetStaticMethodID(javaClassRef, "setApplicationUIContext", "(Landroid/content/Context;)V");
+			Android.Runtime.JNIEnv.CallStaticVoidMethod(javaClassRef, javaMethodRef, new Android.Runtime.JValue(context));
+		}
+        #endif
 
 ### Connect Credentials
 
