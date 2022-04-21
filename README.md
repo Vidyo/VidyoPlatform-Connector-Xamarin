@@ -19,6 +19,24 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 
 > Note: VidyoClient SDK version **22.1.0.30** is required.
 
+#### Important update for Android ####
+VidyoClient depends on Kotlin Library starting from 21.6 version. 
+Please add Kotlin Std Lib [Xamarin.Kotlin.StdLib] via NuGet dependency manager.
+
+#### Important update for iOS ####
+VidyoClient depends on Banuba SDK means you have to add it anyways. 
+Banuba depends on "Photos" system framework so you have to extend the list:
+
+#### 22.x Updates
+- Android: 
+        (1) Kotlin Std Lib [add Xamarin.Kotlin.StdLib]
+        (2) only one dependency file VidyoClient.aar [AndroidAarLibrary]
+- iOS: 
+        (1) Banuba framework 
+        (2) add -lc++ 
+        (3) libsrtp.a change to libsrtp2.a 
+        (4) list Photos framework
+
 ### Connect Credentials
 
 For demo purposes please check ViewModel.cs C# file and modify connect credetials:
