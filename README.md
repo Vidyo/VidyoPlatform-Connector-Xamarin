@@ -80,20 +80,16 @@ To use the VidyoClient SDK in a Xamarin.Android app, perform the following steps
 3. Click "Open" to finish the file selection.
 4. Under "Choose files to include in the project", click the checkbox to the left of "VidyoClient-Android" and select "OK". 
 5. In the Solution pad, expand the new "VidyoClient-AndroidSDK/lib/android" folder in the project.
-6. Right-click on "vidyoclient.jar" and choose "Properties".
-7. In that "Properties" pad, go to the "Build action" field and populate it with "AndroidJavaLibrary".
-8. Under each of the 4 architecture folders (arm64-v8a, armeabi-v7a, x86, x86_64), right-click "libVidyoClient.so"; and choose "Properties".
-9. In that "Properties" pad, go to the "Build action" field and populate it with "AndroidNativeLibrary".
+6. Right-click on "VidyoClient.aar" and choose "Properties".
+7. In that "Properties" pad, go to the "Build action" field and populate it with "AndroidAarLibrary".
 
 #### Windows
 
 1. In the solution toolbar, find "Show All Files" option and switch it.
 2. In the solution window, expand grayed "VidyoClient-AndroidSDK" folder to "include > csharp", right-click on "csharp" folder and choose "Include in Project" option.
 3. In the solution window, expand grayed "VidyoClient-AndroidSDK" folder to "lib > android", right-click on "android" folder and choose "Include in Project" option.
-4. In the solution window, expand "android" folder, right-click on "vidyoclient.jar" and choose "Properties".
-5. In that "Properties" window, go to the "Build action" field and populate it with "AndroidJavaLibrary".
-6. In the expanded "android" folder under each of the 4 architecture folders (arm64-v8a, armeabi-v7a, x86, x86_64), right-click "libVidyoClient.so"; and choose "Properties".
-7. In that "Properties" window, go to the "Build action" field and populate it with "AndroidNativeLibrary".
+4. In the solution window, expand "android" folder, right-click on "VidyoClient.aar" and choose "Properties".
+5. In that "Properties" window, go to the "Build action" field and populate it with "AndroidAarLibrary".
 
 ## Build and Run Application
 1. Open VidyoConnector.sln in either Visual Studio or Xamarin Studio version 6.3 or later.
