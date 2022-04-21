@@ -66,7 +66,7 @@ To use the VidyoClient SDK in a Xamarin.iOS app, perform the following steps:
 8.  Click "Open" to finish the file selection.
 9.  In the Solution pad, expand the new "Native References" folder in the project; right-click "libVidyoClient"; and choose "Properties".
 10. In that "Properties" pad, go to the "Frameworks" field.
-11. Enter the following list of iOS frameworks from Apple:  AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit
+11. Enter the following list of iOS frameworks from Apple:  AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit Photos
 12. In the Solution pad, expand the new "Native References" folder in the project; right-click "BNBEffectPlayerC"; and choose "Properties".
 13. Select Kind Dropdown -> Framework and under Linker Flags add: -lc++
 
@@ -82,7 +82,7 @@ To use the VidyoClient SDK in a Xamarin.iOS app, perform the following steps:
 8. Select VPX.framework folder. Click OK.
 9. In the Solution pad, expand the new "Native References" folder in the project; right-click "libVidyoClient"; and choose "Properties".
 10. In that "Properties" pad, go to the "Frameworks" field.
-11. Enter the following list of iOS frameworks from Apple: AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit
+11. Enter the following list of iOS frameworks from Apple: AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit Photos
 12. In the Solution pad, expand the new "Native References" folder in the project; right-click "BNBEffectPlayerC"; and choose "Properties".
 13. Select Kind Dropdown -> Framework and under Linker Flags add: -lc++
 
