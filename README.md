@@ -23,14 +23,10 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 VidyoClient depends on Kotlin Library starting from 21.6 version. 
 Please add Kotlin Std Lib [Xamarin.Kotlin.StdLib] via NuGet dependency manager.
 
-#### Important update for iOS ####
-VidyoClient depends on Banuba SDK means you have to add it anyways. 
-Banuba depends on "Photos" system framework so you have to extend the list:
-
-#### 22.x Updates
+#### Ugrade to 22.x version changes
 - Android: 
         (1) Kotlin Std Lib [add Xamarin.Kotlin.StdLib]
-        (2) only one dependency file VidyoClient.aar [AndroidAarLibrary]
+        (2) Only one dependency file VidyoClient.aar [AndroidAarLibrary]
 - iOS: 
         (1) libsrtp.a change to libsrtp2.a
 
