@@ -12,12 +12,12 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 ## Acquire VidyoClient iOS and Android SDKs
 > Note: Highlighted steps are very important because samples already contain configurations specified below and both SDK packages are linked as relative folders located in VidyoConnector-xamarin directory.
 
-1. Download VidyoPlatform iOS SDK package: https://static.vidyo.io/22.1.0.30/package/VidyoClient-iOSSDK.zip
+1. Download VidyoPlatform iOS SDK package: https://static.vidyo.io/22.3.0.9/package/VidyoClient-iOSSDK.zip
 2. **Move the unzipped VidyoClient-iOSSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
-3. Download VidyoPlatform Android SDK package: https://static.vidyo.io/22.1.0.30/package/VidyoClient-AndroidSDK.zip
+3. Download VidyoPlatform Android SDK package: https://static.vidyo.io/22.3.0.9/package/VidyoClient-AndroidSDK.zip
 4. **Move the unzipped VidyoClient-AndroidSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
 
-> Note: VidyoClient SDK version **22.1.0.30** is required.
+> Note: VidyoClient SDK version **22.3.0.9** is required.
 
 #### Important update for Android ####
 VidyoClient depends on Kotlin Library starting from 21.6 version. 
@@ -32,10 +32,7 @@ Banuba depends on "Photos" system framework so you have to extend the list:
         (1) Kotlin Std Lib [add Xamarin.Kotlin.StdLib]
         (2) only one dependency file VidyoClient.aar [AndroidAarLibrary]
 - iOS: 
-        (1) Banuba framework 
-        (2) add -lc++ 
-        (3) libsrtp.a change to libsrtp2.a 
-        (4) list Photos framework
+        (1) libsrtp.a change to libsrtp2.a
 
 ### Connect Credentials
 
@@ -62,13 +59,11 @@ To use the VidyoClient SDK in a Xamarin.iOS app, perform the following steps:
 4.  Under "Choose files to include in the project", click the checkbox to the left of "VidyoClient-iOSSDK > include > csharp" and select "OK". 
 5.  In the Solution pad, right-click on the Xamarin.iOS project and select "Add" > "Add Native Reference".
 6.  In the file-selection dialog, browse to project subdirectory "VidyoClient-iOSSDK/lib/ios".
-7.  From that directory, select all 6 static library files "lib*.a", framework "VPX.framework" and at Banuba folder "BNBEffectPlayerC".
+7.  From that directory, select all 6 static library files "lib*.a", framework "VPX.framework".
 8.  Click "Open" to finish the file selection.
 9.  In the Solution pad, expand the new "Native References" folder in the project; right-click "libVidyoClient"; and choose "Properties".
 10. In that "Properties" pad, go to the "Frameworks" field.
-11. Enter the following list of iOS frameworks from Apple:  AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit Photos
-12. In the Solution pad, expand the new "Native References" folder in the project; right-click "BNBEffectPlayerC"; and choose "Properties".
-13. Select Kind Dropdown -> Framework and under Linker Flags add: -lc++
+11. Enter the following list of iOS frameworks from Apple:  AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit
 
 #### Windows
 
@@ -82,9 +77,7 @@ To use the VidyoClient SDK in a Xamarin.iOS app, perform the following steps:
 8. Select VPX.framework folder. Click OK.
 9. In the Solution pad, expand the new "Native References" folder in the project; right-click "libVidyoClient"; and choose "Properties".
 10. In that "Properties" pad, go to the "Frameworks" field.
-11. Enter the following list of iOS frameworks from Apple: AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit Photos
-12. In the Solution pad, expand the new "Native References" folder in the project; right-click "BNBEffectPlayerC"; and choose "Properties".
-13. Select Kind Dropdown -> Framework and under Linker Flags add: -lc++
+11. Enter the following list of iOS frameworks from Apple: AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit
 
 ## Importing VidyoClient Android SDK
 > Note: the below steps are already performed in the VidyoConnector.Android project in the VidyoConnector solution. These instructions are intended to show how a developer would import the library into their own application. Therefore, do not perform these steps in this application, which would lead to duplicated libraries and compilation errors. For this sample, please make sure you have placed the SDK in the right folder and then skip to the "Build and Run Application" section.
