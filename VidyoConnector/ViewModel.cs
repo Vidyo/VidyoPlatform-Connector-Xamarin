@@ -37,7 +37,7 @@ namespace VidyoConnector
         string _clientVersion = "v 0.0.00.x";
 
         string _portal = "*.platform.vidyo.io"; // Insert valid Portal FQDN e.g.: *.platform.vidyo.io
-        string _roomKey = ""; // Insert valid RoomKey e.g.: 8huaP05z6Z
+        string _roomKey = ""; // Insert valid RoomKey e.g.: d3g2xEEfd
         string _displayName = "Xamarin User"; // Insert your Display Name
         string _roomPin = ""; // Insert valid roomPin e.g.: Res$!dfs45
 

@@ -349,6 +349,9 @@
     <Compile Include="..\VidyoClient-iOSSDK\include\csharp\RemoteMicrophone.cs">
       <Link>VidyoClient-iOSSDK\include\csharp\RemoteMicrophone.cs</Link>
     </Compile>
+    <Compile Include="..\VidyoClient-iOSSDK\include\csharp\CameraPreset.cs">
+      <Link>VidyoClient-iOSSDK\include\csharp\CameraPreset.cs</Link>
+    </Compile>
     <Compile Include="..\VidyoClient-iOSSDK\include\csharp\CalendarCreateCode.cs">
       <Link>VidyoClient-iOSSDK\include\csharp\CalendarCreateCode.cs</Link>
     </Compile>
@@ -500,15 +503,11 @@
     <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\libVidyoClient.a">
       <Kind>Static</Kind>
       <SmartLink>False</SmartLink>
-      <Frameworks>AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit Photos</Frameworks>
+      <Frameworks>AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit</Frameworks>
     </NativeReference>
     <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\VPX.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
-    </NativeReference>
-    <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\Banuba\BNBEffectPlayerC.xcframework">
-      <Kind>Framework</Kind>
-      <LinkerFlags>-lc++</LinkerFlags>
     </NativeReference>
     <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\libsrtp2.a">
       <Kind>Static</Kind>
