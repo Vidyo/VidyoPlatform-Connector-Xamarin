@@ -12,12 +12,12 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 ## Acquire VidyoClient iOS and Android SDKs
 > Note: Highlighted steps are very important because samples already contain configurations specified below and both SDK packages are linked as relative folders located in VidyoConnector-xamarin directory.
 
-1. Download VidyoPlatform iOS SDK package: https://static.vidyo.io/22.3.0.9/package/VidyoClient-iOSSDK.zip
+1. Download VidyoPlatform iOS SDK package: https://static.vidyo.io/22.5.0.8/package/VidyoClient-iOSSDK.zip
 2. **Move the unzipped VidyoClient-iOSSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
-3. Download VidyoPlatform Android SDK package: https://static.vidyo.io/22.3.0.9/package/VidyoClient-AndroidSDK.zip
+3. Download VidyoPlatform Android SDK package: https://static.vidyo.io/22.5.0.8/package/VidyoClient-AndroidSDK.zip
 4. **Move the unzipped VidyoClient-AndroidSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
 
-> Note: VidyoClient SDK version **22.3.0.9** is required.
+> Note: VidyoClient SDK version **22.5.0.8** is required.
 
 #### Important update for Android ####
 VidyoClient depends on Kotlin Library starting from 21.6 version. 
