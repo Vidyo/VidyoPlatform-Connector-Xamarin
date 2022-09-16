@@ -29,6 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
+<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -331,9 +332,6 @@
     <Compile Include="..\VidyoClient-AndroidSDK\include\csharp\NetworkInterface.cs">
       <Link>VidyoClient-AndroidSDK\include\csharp\NetworkInterface.cs</Link>
     </Compile>
-    <Compile Include="..\VidyoClient-AndroidSDK\include\csharp\VirtualWindowShare.cs">
-      <Link>VidyoClient-AndroidSDK\include\csharp\VirtualWindowShare.cs</Link>
-    </Compile>
     <Compile Include="..\VidyoClient-AndroidSDK\include\csharp\Statistics.cs">
       <Link>VidyoClient-AndroidSDK\include\csharp\Statistics.cs</Link>
     </Compile>
@@ -396,6 +394,9 @@
     </Compile>
     <Compile Include="..\VidyoClient-AndroidSDK\include\csharp\RemoteMicrophone.cs">
       <Link>VidyoClient-AndroidSDK\include\csharp\RemoteMicrophone.cs</Link>
+    </Compile>
+    <Compile Include="..\VidyoClient-AndroidSDK\include\csharp\CameraPreset.cs">
+      <Link>VidyoClient-AndroidSDK\include\csharp\CameraPreset.cs</Link>
     </Compile>
     <Compile Include="..\VidyoClient-AndroidSDK\include\csharp\CalendarCreateCode.cs">
       <Link>VidyoClient-AndroidSDK\include\csharp\CalendarCreateCode.cs</Link>
