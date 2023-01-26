@@ -25,6 +25,7 @@ namespace VidyoConnector
         public void Initialize(IVidyoController vidyoController)
         {
             this.mVidyoController = vidyoController;
+            this.mVidyoController.Initialize();
 
             _videoView.OnHandleSet = new Command(() => {
                 this.mViewModel.ClientVersion = this.mVidyoController.Construct(_videoView);
@@ -94,7 +95,7 @@ namespace VidyoConnector
 
             if (mVidyoController != null)
             {
-                mVidyoController.CleanUp();
+                mVidyoController.ReleaseDevices();
             }
         }
 

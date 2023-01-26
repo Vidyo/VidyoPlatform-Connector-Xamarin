@@ -59,7 +59,7 @@ namespace VidyoConnector
         }
 
         /* Initialize Vidyo Client. Called only once */
-        private bool Initialize()
+        public bool Initialize()
         {
             if (mIsVidyoClientInitialized)
             {
@@ -73,26 +73,19 @@ namespace VidyoConnector
 #if __ANDROID__
             ConnectorPKG.SetApplicationUIContext(Forms.Context as Activity);
 #endif
+
+            CreateConnector();
             return mIsVidyoClientInitialized;
         }
 
-        public String Construct(NativeView videoView)
+        private void CreateConnector()
         {
-            bool result = Initialize();
-            if (!result)
-            {
-                throw new Exception("Client initialization error.");
-            }
-
-            // Remember the reference to video view
-            this.mVideoViewHolder = videoView;
-
-            mConnector = new Connector(this.mVideoViewHolder.Handle,
-                                               Connector.ConnectorViewStyle.ConnectorviewstyleDefault,
-                                               MAX_PARTICIPANTS,
-                                               mLogLevel,
-                                               "",
-                                               0);
+            mConnector = new Connector(IntPtr.Zero,
+                                              Connector.ConnectorViewStyle.ConnectorviewstyleDefault,
+                                              MAX_PARTICIPANTS,
+                                              mLogLevel,
+                                              "",
+                                              0);
             // Get the version of VidyoClient
             string clientVersion = mConnector.GetVersion();
 
@@ -130,7 +123,21 @@ namespace VidyoConnector
             }
 
             mLogger.Log("Connector instance has been created.");
-            return clientVersion;
+        }
+
+        public String Construct(NativeView videoView)
+        {
+            // Remember the reference to video view
+            this.mVideoViewHolder = videoView;
+
+            mConnector.AssignViewToCompositeRenderer(videoView.Handle, Connector.ConnectorViewStyle.ConnectorviewstyleDefault,
+                                              MAX_PARTICIPANTS);
+
+            mConnector.SelectDefaultCamera();
+            mConnector.SelectDefaultMicrophone();
+            mConnector.SelectDefaultSpeaker();
+
+            return mConnector.GetVersion();
         }
 
         /* App state changed to background mode */
@@ -153,24 +160,15 @@ namespace VidyoConnector
             }
         }
 
-        public void CleanUp()
+        public void ReleaseDevices()
         {
-            mConnector.UnregisterLocalCameraEventListener();
-            mConnector.UnregisterLocalSpeakerEventListener();
-            mConnector.UnregisterLocalMicrophoneEventListener();
-
-            mConnector.UnregisterLogEventListener();
-
             mConnector.SelectLocalCamera(null);
             mConnector.SelectLocalMicrophone(null);
             mConnector.SelectLocalSpeaker(null);
 
-            mConnector.Disable();
-            mConnector = null;
-
-            mLogger.Log("Connector instance has been released.");
+            mConnector.HideView(mVideoViewHolder.Handle);
         }
-
+        
         public bool Connect(string portal, string roomKey, string displayName, string pin)
         {
             return mConnector.ConnectToRoomAsGuest(portal, displayName, roomKey, pin, this);

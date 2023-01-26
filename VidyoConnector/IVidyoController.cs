@@ -5,12 +5,11 @@ namespace VidyoConnector
 {
     public interface IVidyoController
     {
-
+        bool Initialize();
         // Create connector instance and return client version
         String Construct(Controls.NativeView videoView);
 
-        // Release connector instance
-        void CleanUp();
+        void ReleaseDevices();
 
         // Page high-level lifecycle events
         void OnAppResume();
