@@ -28,7 +28,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <DeviceSpecificBuild>false</DeviceSpecificBuild>
-    <CodesignProvision>iOS Team Provisioning Profile: com.vidyo.platform.connector.xamarin</CodesignProvision>
+    <CodesignProvision>Automatic</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -87,6 +87,7 @@
       </CustomCommands>
     </CustomCommands>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignProvision>Automatic</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

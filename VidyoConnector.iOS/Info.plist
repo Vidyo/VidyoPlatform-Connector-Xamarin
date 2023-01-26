@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>VidyoConnector</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.vidyo.platform.connector.xamarin</string>
+	<string>com.vidyo.VidyoConnector.taras</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -41,9 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>Video Chat</string>
+	<string>Required for video conferencing</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Video Chat</string>
+	<string>Required for audio conferencing</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIBackgroundModes</key>
