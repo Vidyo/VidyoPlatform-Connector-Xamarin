@@ -101,27 +101,6 @@ namespace VidyoConnector
                 ConnectorPKG.SetExperimentalOptions(mExperimentalOptions);
             }
 
-            if (!mConnector.RegisterLocalCameraEventListener(this))
-            {
-                mLogger.Log("RegisterLocalCameraEventListener failed!");
-            }
-
-            // Register for log callbacks
-            if (!mConnector.RegisterLogEventListener(this, mLogLevel))
-            {
-                mLogger.Log("VidyoConnector RegisterLogEventListener failed");
-            }
-
-            if (!mConnector.RegisterLocalSpeakerEventListener(this))
-            {
-                mLogger.Log("VidyoConnector RegisterLocalSpeakerEventListener failed");
-            }
-
-            if (!mConnector.RegisterLocalMicrophoneEventListener(this))
-            {
-                mLogger.Log("VidyoConnector RegisterLocalSpeakerEventListener failed");
-            }
-
             mLogger.Log("Connector instance has been created.");
         }
 
@@ -137,6 +116,7 @@ namespace VidyoConnector
             mConnector.SelectDefaultMicrophone();
             mConnector.SelectDefaultSpeaker();
 
+            RegisterListeners();
             return mConnector.GetVersion();
         }
 
@@ -162,6 +142,8 @@ namespace VidyoConnector
 
         public void ReleaseDevices()
         {
+            UnregisterListeners();
+
             mConnector.SelectLocalCamera(null);
             mConnector.SelectLocalMicrophone(null);
             mConnector.SelectLocalSpeaker(null);
@@ -328,6 +310,37 @@ namespace VidyoConnector
         public void OnLocalMicrophoneStateUpdated(LocalMicrophone localMicrophone, VidyoClient.Device.DeviceState state)
         {
             mLogger.Log("OnLocalMicrophoneStateUpdated");
+        }
+
+        private void RegisterListeners()
+        {
+            if (!mConnector.RegisterLocalCameraEventListener(this))
+            {
+                mLogger.Log("RegisterLocalCameraEventListener failed!");
+            }
+
+            if (!mConnector.RegisterLogEventListener(this, mLogLevel))
+            {
+                mLogger.Log("VidyoConnector RegisterLogEventListener failed");
+            }
+
+            if (!mConnector.RegisterLocalSpeakerEventListener(this))
+            {
+                mLogger.Log("VidyoConnector RegisterLocalSpeakerEventListener failed");
+            }
+
+            if (!mConnector.RegisterLocalMicrophoneEventListener(this))
+            {
+                mLogger.Log("VidyoConnector RegisterLocalSpeakerEventListener failed");
+            }
+        }
+
+        private void UnregisterListeners()
+        {
+            mConnector.UnregisterLocalCameraEventListener();
+            mConnector.UnregisterLogEventListener();
+            mConnector.UnregisterLocalSpeakerEventListener();
+            mConnector.UnregisterLocalMicrophoneEventListener();
         }
     }
 }
