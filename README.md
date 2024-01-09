@@ -12,23 +12,43 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 ## Acquire VidyoClient iOS and Android SDKs
 > Note: Highlighted steps are very important because samples already contain configurations specified below and both SDK packages are linked as relative folders located in VidyoConnector-xamarin directory.
 
-1. Download VidyoPlatform iOS SDK package: https://static.vidyo.io/22.5.0.8/package/VidyoClient-iOSSDK.zip
+1. Download VidyoPlatform iOS SDK package: https://static.vidyo.io/23.1.1.5/package/VidyoClient-iOSSDK.zip
 2. **Move the unzipped VidyoClient-iOSSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
-3. Download VidyoPlatform Android SDK package: https://static.vidyo.io/22.5.0.8/package/VidyoClient-AndroidSDK.zip
+3. Download VidyoPlatform Android SDK package: https://static.vidyo.io/23.1.1.5/package/VidyoClient-AndroidSDK.zip
 4. **Move the unzipped VidyoClient-AndroidSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
 
-> Note: VidyoClient SDK version **22.5.0.8** is required.
+> Note: VidyoClient SDK version **23.1.1.5** is required.
 
 #### Important update for Android ####
 VidyoClient depends on Kotlin Library starting from 21.6 version. 
-Please add Kotlin Std Lib [Xamarin.Kotlin.StdLib] via NuGet dependency manager.
+Please add Kotlin Std Lib 1.8.0 [Xamarin.Kotlin.StdLib] via NuGet dependency manager.
 
-#### Ugrade to 22.x version changes
-- Android: 
-        (1) Kotlin Std Lib [add Xamarin.Kotlin.StdLib]
-        (2) Only one dependency file VidyoClient.aar [AndroidAarLibrary]
-- iOS: 
-        (1) libsrtp.a change to libsrtp2.a
+### Upgrade to 22.x version changes
+#### Android: 
+1. Kotlin Std Lib [add Xamarin.Kotlin.StdLib]
+2. Only one dependency file VidyoClient.aar [AndroidAarLibrary]
+
+#### iOS: 
+
+1. **libsrtp.a** change to **libsrtp2.a**
+
+### Upgrade to 23.x version changes:
+
+#### Android
+
+Please don't forget to select the **right version** of the NuGet Package.
+
+1. Xamarin.AndroidX.Camera.Camera2 | Version: **1.2.1**
+2. Xamarin.AndroidX.Camera.Lifecycle | Version: **1.2.1**
+3. Xamarin.AndroidX.Camera.Extensions | Version: **1.2.1**
+4. Xamarin.AndroidX.Concurrent.Futures.Ktx | Version **1.1.0**
+5. Xamarin.AndroidX.Lifecycle.Runtime.Ktx | Version: **2.5.1**
+
+Every package installation should ends up successfully:
+ 
+> Successfully installed 'Xamarin.AndroidX.Lifecycle.Runtime.Ktx 2.5.1' to VidyoConnector.Android
+
+Sample project has not been migrated to 
 
 ### Connect Credentials
 
